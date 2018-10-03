@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-    StyleSheet, 
-    Text, 
+    StyleSheet,
+    Text,
     View,
     TextInput,
-    KeyboardAvoidingView, 
+    KeyboardAvoidingView,
     TouchableOpacity,
     AsyncStorage,
     Image,
@@ -12,19 +12,20 @@ import {
   } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import piquis from '../../piquis.jpg';
+import piquis_text from '../../piquis_text.png';
 import axios from 'axios';
 
 const LoginV = (props) => {
     return (
         <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
           <View style={styles.MainContainer}>
-              <Image 
+              <Image
                 style={styles.piquisImage}
-                source={require('../../piquis.jpg')}
+                source={require('../../piquis_text.png')}
 
                 />
 
-              <TextInput 
+              <TextInput
                 style={styles.textInput} placeholder="Username"
                 onChangeText={props.username}
                 underlineColorAndroid='transparent'
@@ -39,7 +40,8 @@ const LoginV = (props) => {
               <TouchableOpacity
                 style={styles.btn}
                 onPress={props.login}>
-                <Text>Log in</Text>
+                <Text style={{color: 'white', fontSize: 25}}>
+                  Login</Text>
               </TouchableOpacity>
           </View>
       </KeyboardAvoidingView>
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
       position: 'absolute',
       width: '100%',
       height: '100%',
-      backgroundColor: '#D16928',
+      backgroundColor: '#EFB289',
     },
     wrapper: {
       flex: 1,
@@ -76,24 +78,26 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
     piquisImage: {
-        width: 150, 
-        height: 150, 
+        width: 170,
+        height: 225,
         //resizeMode: "contain",
         alignSelf: 'center',
-        marginBottom: 20,
+        marginBottom: 55,
     },
     textInput: {
       alignSelf: 'center',
       padding: 16,
       marginBottom: 20,
-      backgroundColor: '#fff',
-      width: '70%',
+      backgroundColor: '#F6DCCA',
+      width: '75%',
+      borderRadius:10,
     },
     btn: {
       alignSelf: 'center',
-      backgroundColor: '#CD5C5C',
+      backgroundColor: '#1CA04B',
       padding: 20,
       alignItems: 'center',
-      width: '70%',
+      width: '80%',
+      borderRadius:10,
     }
   });

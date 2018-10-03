@@ -18,15 +18,15 @@ class Login extends React.Component{
         this.setState({password: password});
     }*/
     loginAction = () => {
-        if(this.state.username === "User" && this.state.password === "123"){
+        if(this.state.username === "" && this.state.password === ""){
             this.props.navigation.navigate('Profile');
         }
-        
+
     }
 
     render(){
         return(
-            <LoginV 
+            <LoginV
                 username={(username) => this.setState({username})}
                 password={(password) => this.setState({password})}
                 login={this.loginAction}
