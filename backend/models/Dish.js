@@ -4,6 +4,11 @@ module.exports = (sequelize,DataTypes) => {
   },
   {
     tableName: 'Dish',
+    classMethods: {
+      associate : function(models) {
+        Dish.belongsTo(models.Restaurant);
+      },
+    }
   });
   return Dish;
 }
