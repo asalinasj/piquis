@@ -43,6 +43,13 @@ const LoginV = (props) => {
                 <Text style={{color: 'white', fontSize: 25}}>
                   Login</Text>
               </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.btn2}
+                onPress={props.create}>
+                <Text style={{color: 'white', fontSize: 20}}>
+                  Create Account</Text>
+              </TouchableOpacity>
           </View>
       </KeyboardAvoidingView>
     );
@@ -99,5 +106,15 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       width: '80%',
       borderRadius:10,
-    }
+      marginBottom: 30,
+    },
+
+    btn2: {
+      alignSelf: 'center',
+      backgroundColor: '#1CA04B',
+      padding: 20,
+      alignItems: 'center',
+      width: '50%',
+      borderRadius:10,
+    },
   });
