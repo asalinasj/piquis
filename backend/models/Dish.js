@@ -8,7 +8,14 @@ module.exports = (sequelize,DataTypes) => {
       associate : function(models) {
         Dish.belongsTo(models.Restaurant);
       },
-    }
+    },
+    hooks: {
+      beforeValidate: (dish, options) => {
+        if (dish.RestaurantId === undefined) {
+          throw new Error('Bad Data: A dish must be associated with a restaurant.')
+        }
+      },
+    },
   });
   return Dish;
 }
