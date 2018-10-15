@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       validate: {
-        isNull: false,
         notEmpty: true,
       },
     },
@@ -11,14 +10,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         notEmpty: false,
-        isAlphanumeric: true,
+        /* todo: add address validation
+        isAddress: (value) => {
+
+        }*/
       },
     },
     rating: {
       type: DataTypes.INTEGER,
       validate: {
         notEmpty: false,
-        min: 1,
+        min: 0,
         max: 5,
       },
     },
