@@ -20,6 +20,7 @@
     "pg": "^6.4.2",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-native-blur": "^3.2.2",
     "react-native-tab-bar-footer": "^1.0.5",
     "react-navigation": "^2.17.0",
     "sequelizer": "^1.1.3"
