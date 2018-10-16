@@ -27,9 +27,10 @@ const ProfileV = (props) => {
     return (
       <Container style={styles.MainContainer}>
           <Header style = {styles.header}>
-            <Left></Left>
-              <Title style={styles.headerText}>PROFILE</Title>
-            <Right></Right>
+            <TextInput
+              style={styles.textInput} placeholder="Search"
+              underlineColorAndroid='transparent'
+            />
           </Header>
             <Content>
                 <View>
@@ -60,8 +61,20 @@ const styles = StyleSheet.create({
       paddingBottom: 10,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'rgba(43, 132, 82, 0.5)',
+      backgroundColor: '#D16928',
       borderBottomWidth: 0,
+    },
+
+    textInput: {
+      alignSelf: 'center',
+      textAlign: 'center',
+      position: 'absolute',
+      paddingTop: 25,
+      padding: 16,
+      marginBottom: 20,
+      backgroundColor: '#F6DCCA',
+      width: '80%',
+      borderRadius:10,
     },
 
     headerText: {
