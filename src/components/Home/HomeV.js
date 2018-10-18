@@ -20,7 +20,7 @@ import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
 import SearchHeader from '../SearchBar/SearchHeader.js';
 import piquis_text from '../../piquis_text.png';
-import Profile from './Profile';
+import Login from '../Login/Login';
 
 
 class ProfileV extends React.Component {
@@ -30,7 +30,7 @@ class ProfileV extends React.Component {
   }
 
   homePage = () => {
-    this.props.navigation.navigate('Profile');
+    this.props.navigation.navigate('Login');
   }
 
 render(){

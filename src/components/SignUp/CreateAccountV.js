@@ -20,15 +20,15 @@ import {
 import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
 import profile_icon from '../../../assets/profile_icon.png';
-
+import SearchHeader from '../SearchBar/SearchHeader.js';
 
 const CreateAccountV = (props) => {
     return (
       <Container style={styles.MainContainer}>
           <Header style = {styles.header}>
-            <Left></Left>
-              <Title style={styles.headerText}>Create Account</Title>
             <Right></Right>
+            <Title> Create Account </Title>
+            <Left></Left>
           </Header>
             <Content>
                 <View>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
       paddingBottom: 10,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#D16928',
+      backgroundColor: 'transparent',
       borderBottomWidth: 0,
     },
 

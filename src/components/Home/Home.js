@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import ProfileV from './ProfileV.js';
+import HomeV from './HomeV.js';
 import {
     Container,
     Header,
@@ -18,7 +18,7 @@ class Profile extends React.Component{
     render(){
         return(
           <View>
-            <ProfileV />
+            <HomeV />
             <FooterV />
           </View>
         );

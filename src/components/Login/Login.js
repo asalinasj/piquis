@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginV from './LoginV';
-import Profile from '../Profile/Profile';
+import Home from '../Home/Home';
 import CreateAccount from '../SignUp/CreateAccount';
 
 class Login extends React.Component{
@@ -20,7 +20,7 @@ class Login extends React.Component{
     }*/
     loginAction = () => {
         if(this.state.username === "" && this.state.password === ""){
-            this.props.navigation.navigate('Profile');
+            this.props.navigation.navigate('Home');
         }
 
     }
