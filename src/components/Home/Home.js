@@ -9,19 +9,25 @@ import {
     Right, Button, Icon, Title,
     Content, Footer, FooterTab, Badge } from 'native-base';
 import FooterV from '../Footer/FooterV.js';
-import Login from '../Login/Login';
+import Profile from '../Profile/Profile';
 
 
 
-class Profile extends React.Component{
+class Home extends React.Component{
+
+  profilePage = () => {
+    this.props.navigation.navigate('Profile');
+  }
 
     render(){
         return(
           <View>
-            <HomeV />
+            <HomeV
+              profile = {this.profilePage}
+              />
             <FooterV />
           </View>
         );
     }
 }
-export default Profile;
+export default Home;

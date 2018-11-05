@@ -16,7 +16,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
 
-export default class SearchBar extends Component {
+export default class SearchBar  extends Component {
 
 state = { term: '' };
 
