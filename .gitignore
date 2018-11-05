@@ -5,3 +5,5 @@ npm-debug.*
 .vscode
 
 backend/config/config.json
+
+.env
