@@ -5,9 +5,11 @@ import {createStackNavigator,
         createBottomTabNavigator} from 'react-navigation';
 import Login from './src/components/Login/Login';
 import Profile from './src/components/Profile/Profile';
+import Home from './src/components/Home/Home';
 
 export default App = createStackNavigator({
   Login: { screen: Login},
+  Home: { screen: Home},
   Profile: { screen: Profile},
 
   }, {
