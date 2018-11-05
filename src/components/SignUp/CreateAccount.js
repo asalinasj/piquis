@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import ProfileV from './ProfileV.js';
+import CreateAccountV from './CreateAccountV.js';
 import {
     Container,
     Header,
@@ -10,11 +10,11 @@ import {
     Content, Footer, FooterTab, Badge } from 'native-base';
 
 
-class Profile extends React.Component{
+class CreateAccount extends React.Component{
     render(){
         return(
-            <ProfileV />
+            <CreateAccountV />
         );
     }
 }
-export default Profile;
+export default CreateAccount;

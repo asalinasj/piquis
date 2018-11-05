@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginV from './LoginV';
 import Profile from '../Profile/Profile';
+import CreateAccount from '../SignUp/CreateAccount';
 
 class Login extends React.Component{
     constructor(props){
@@ -24,12 +25,17 @@ class Login extends React.Component{
 
     }
 
+    createAccount = () => {
+      this.props.navigation.navigate('CreateAccount');
+    }
+
     render(){
         return(
             <LoginV
                 username={(username) => this.setState({username})}
                 password={(password) => this.setState({password})}
                 login={this.loginAction}
+                create={this.createAccount}
             />
         );
     }

@@ -20,28 +20,26 @@ import {
 import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
 import profile_icon from '../../../assets/profile_icon.png';
-import FooterV from '../Footer/FooterV.js';
 
 
-const ProfileV = (props) => {
+const CreateAccountV = (props) => {
     return (
       <Container style={styles.MainContainer}>
           <Header style = {styles.header}>
             <Left></Left>
-              <Title style={styles.headerText}>PROFILE</Title>
+              <Title style={styles.headerText}>Create Account</Title>
             <Right></Right>
           </Header>
             <Content>
                 <View>
-                    <Text style={styles.userInfo}>Marcial Cabrera</Text>
+                    <Text style={styles.userInfo}>Tell me your INFO</Text>
                 </View>
             </Content>
-            <FooterV />
       </Container>
     );
 }
 
-export default ProfileV;
+export default CreateAccountV;
 
 const styles = StyleSheet.create({
     MainContainer: {
@@ -60,7 +58,7 @@ const styles = StyleSheet.create({
       paddingBottom: 10,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'rgba(43, 132, 82, 0.5)',
+      backgroundColor: '#D16928',
       borderBottomWidth: 0,
     },
 
