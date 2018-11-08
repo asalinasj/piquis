@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginV from './LoginV';
-import Profile from '../Profile/Profile';
+import Home from '../Home/Home';
 import CreateAccount from '../SignUp/CreateAccount';
 
 class Login extends React.Component{

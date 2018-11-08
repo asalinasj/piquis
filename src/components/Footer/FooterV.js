@@ -25,7 +25,7 @@ import settings_icon from '../../../assets/settings_icon.png';
 
 const FooterV = (props) => {
     return (
-        <Footer style = {styles.MainContainer}>
+        <View style = {styles.MainContainer}>
           <Button style = {styles.profile}>
             <Image
               style = {styles.size}
@@ -44,7 +44,7 @@ const FooterV = (props) => {
               source={require('../../../assets/settings_icon.png')}
               />
           </Button>
-        </Footer>
+        </View>
     );
 }
 
@@ -54,6 +54,7 @@ export default FooterV;
 const styles = StyleSheet.create({
     MainContainer: {
       paddingTop: 3,
+      marginTop: 688,
       height: 48,
       width: '100%',
       flexDirection: 'row',

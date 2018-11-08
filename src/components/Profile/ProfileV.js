@@ -15,28 +15,36 @@ import {
     TouchableOpacity,
     AsyncStorage,
     Image,
-    ImageBackground,
   } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
-import profile_icon from '../../../assets/profile_icon.png';
-import FooterV from '../Footer/FooterV.js';
-
+import SearchHeader from '../SearchBar/SearchHeader.js';
+import piquis_text from '../../piquis_text.png';
+import Profile from './Profile';
 
 const ProfileV = (props) => {
+
     return (
       <Container style={styles.MainContainer}>
-          <Header style = {styles.header}>
-            <Left></Left>
-              <Title style={styles.headerText}>PROFILE</Title>
-            <Right></Right>
-          </Header>
-            <Content>
-                <View>
-                    <Text style={styles.userInfo}>Marcial Cabrera</Text>
-                </View>
-            </Content>
-            <FooterV />
+        <Header style = {styles.header}>
+          <Right></Right>
+          <Body>
+            <Button
+              style = {styles.button}
+              onPress = {props.home}
+              >
+            <Image
+              style={styles.piquisImage}
+              source={require('../../piquis_text.png')}
+              />
+          </Button>
+          </Body>
+          <Left></Left>
+        </Header>
+          <Content style = {styles.content}>
+            <Text style = {styles.text}> PROFILE </Text>
+            <Text style = {styles.text1}> Marcial Cabrera </Text>
+          </Content>
       </Container>
     );
 }
@@ -49,27 +57,43 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       position: 'absolute',
       width: '100%',
-      height: '100%',
-      backgroundColor: '#D16928',
+      backgroundColor: '#F0FFF0',
     },
 
     header: {
-      height: 80,
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      height: 130,
       width: '100%',
-      paddingTop: 25,
-      paddingBottom: 10,
-      justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'rgba(43, 132, 82, 0.5)',
+      backgroundColor: 'transparent',
       borderBottomWidth: 0,
     },
 
-    headerText: {
-      fontSize: 35,
+    piquisImage: {
+        width: 59.5,
+        height: 78.75,
     },
 
-    userInfo: {
-      paddingTop: 30,
-      fontSize: 20,
-    }
+    button: {
+      paddingTop: 8,
+      backgroundColor: 'transparent',
+    },
+
+    content: {
+      paddingTop: 20,
+    },
+
+    text: {
+      alignSelf: 'center',
+      color: '#324F17',
+      fontSize: 40,
+    },
+
+    text1: {
+      alignSelf: 'center',
+      marginTop: 20,
+      color: '#324F17',
+      fontSize: 40,
+    },
   });
