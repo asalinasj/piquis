@@ -6,7 +6,7 @@ import {createStackNavigator,
 import Login from './src/components/Login/Login';
 import Profile from './src/components/Profile/Profile';
 import CreateAccount from './src/components/SignUp/CreateAccount';
-
+import Home from './src/components/Home/Home';
 
 export default App = createStackNavigator({
   Login: { screen: Login},
