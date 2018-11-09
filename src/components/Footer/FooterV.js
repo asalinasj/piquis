@@ -17,34 +17,31 @@ import {
     Image,
     ImageBackground,
   } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import axios from 'axios';
 import profile_icon from '../../../assets/profile_icon.png';
 import home_icon from '../../../assets/home_icon.png';
 import settings_icon from '../../../assets/settings_icon.png';
+import Home from '../Home/Home'
+import Profile from '../Profile/Profile';
 
 const FooterV = (props) => {
     return (
-        <View style = {styles.MainContainer}>
-          <Button style = {styles.profile}>
-            <Image
-              style = {styles.size}
-              source={require('../../../assets/profile_icon.png')}
-              />
-          </Button>
-          <Button style = {styles.home}>
-            <Image
-              style = {styles.size}
-              source={require('../../../assets/home_icon.png')}
-              />
-          </Button>
-          <Button style = {styles.settings}>
-            <Image
-              style = {styles.size}
-              source={require('../../../assets/settings_icon.png')}
-              />
-          </Button>
-        </View>
+        <Footer>
+          <FooterTab>
+            <Button vertical onPress={props.home}>
+              <Icon 
+                name="home"
+               />
+            </Button>
+            <Button vertical onPress={props.navProfile}>
+              <Icon name="person" />
+            </Button>
+            <Button vertical>
+              <Icon name="settings" />
+            </Button>
+          </FooterTab>
+        </Footer>
     );
 }
 

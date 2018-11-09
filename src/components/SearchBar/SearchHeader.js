@@ -19,28 +19,22 @@ import piquis_text from '../../piquis_text.png';
 
 const SearchHeader = (props) => {
 
-  onPressSearch = term => {
-	console.log(term);
-  }
-
     return (
           <Header style = {styles.header}>
-            <Right></Right>
+            <Left></Left>
             <Body>
               <Button
                 style = {styles.button}
                 onPress = {props.home}
                 >
-              <Image
-                style={styles.piquisImage}
-                source={require('../../piquis_text.png')}
-                />
-            </Button>
+
+              </Button>
               <SearchBar
-              onPressSearch={this.onPressSearch}
+                pressSearch={props.searchButton}
+                searchDataVal={props.dataVal}
               />
             </Body>
-            <Left></Left>
+            <Right></Right>
           </Header>
     );
 }

@@ -15,12 +15,16 @@ import {
   } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
+import { isThisHour } from 'date-fns';
 
 export default class SearchBar  extends Component {
+  constructor(props){
+    super(props)
+    state = { term: '' };
 
-state = { term: '' };
+  }
 
-render (){
+  render (){
     const {
     	containerStyle,
     	searchTextStyle,
@@ -32,17 +36,16 @@ render (){
       <View style={containerStyle}>
         <TextInput
           style={searchTextStyle} placeholder="Search"
-          value = {this.state.term}
-          onChangeText = {term => this.setState ({ term })} // { term }  == { term: term }
+          onChangeText = {value => {this.props.searchDataVal(value)}} // { term }  == { term: term }
         />
         <Button
           style={buttonStyle}
-          onPress ={() => this.props.onPressSearch(this.state.term)}
+          onPress ={this.props.pressSearch}
         >
         <Image
           style = {size}
           source={require('../../../assets/search_icon2.png')}
-          />
+        />
         </Button>
       </View>
     );

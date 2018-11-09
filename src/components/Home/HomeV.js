@@ -20,38 +20,22 @@ import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
 import SearchBar from '../SearchBar/SearchBar.js';
 import piquis_text from '../../piquis_text.png';
-
-
+import SearchHeader from '../SearchBar/SearchHeader';
+import FooterC from '../Footer/FooterC';
 
 const HomeV = (props) => {
-
-  onPressSearch = term => {
-	console.log(term);
-  }
-
     return (
       <Container style={styles.MainContainer}>
-        <Header style = {styles.header}>
-          <Right></Right>
-          <Body>
-            <Button
-              style = {styles.button}
-              onPress = {props.profile}
-              >
-            <Image
-              style={styles.piquisImage}
-              source={require('../../piquis_text.png')}
-              />
-          </Button>
-            <SearchBar
-            onPressSearch={this.onPressSearch}
-            />
-          </Body>
-          <Left></Left>
-        </Header>
-          <Content style = {styles.content}>
+        <SearchHeader 
+          searchButton = {props.search}
+          dataVal = {props.searchText}
+        />
+        <Content style = {styles.content}>
             <Title style = {styles.text}> TRENDING </Title>
-          </Content>
+        </Content>
+        <FooterC 
+          pressNavHome = {props.pressHome}
+         />
       </Container>
     );
 }
