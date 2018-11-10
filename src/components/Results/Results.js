@@ -9,6 +9,7 @@ import {
     Content, Footer, FooterTab, Badge } from 'native-base';
 import FooterV from '../Footer/FooterV.js';
 import ResultsV from './ResultsV';
+import {createStackNavigator} from 'react-navigation';
 
 class Results extends React.Component{
     constructor(props){
@@ -19,7 +20,7 @@ class Results extends React.Component{
     }
     render(){
         return(
-            <ResultsV text={this.props.text}
+            <ResultsV text={this.props.navigation.state.params.term}
             />
         );
     }

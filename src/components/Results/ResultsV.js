@@ -17,8 +17,8 @@ const ResultsV = (props) => {
 
             </Header>
             <Content>
-                <Text>{props.text}</Text>
-                <Text>{props.text}</Text>
+                <Text>Results page</Text>
+                <Text>Dish: {props.text}</Text>
             </Content>
             <FooterC />
         </Container>

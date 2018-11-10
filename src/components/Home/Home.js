@@ -26,10 +26,10 @@ class Home extends React.Component{
     title: 'Welcome',
   };
   profilePage = () => {
-    this.props.navigation.navigate('Profile', {term: this.state.term});
+    this.props.navigation.navigate('Profile');
   }
   pressSearch = () => {
-    this.props.navigation.navigate('Results');
+    this.props.navigation.navigate('Results', {term: this.state.term});
     console.log(this.state.term);
   }
   onPressHome = () => {
@@ -37,6 +37,7 @@ class Home extends React.Component{
   }
   sendData = (data) => {
     this.setState({term: data});
+
 
   }
 
