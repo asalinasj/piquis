@@ -15,12 +15,18 @@ class Results extends React.Component{
     constructor(props){
         super(props)
     }
-    printVal = () => {
-        console.log(this.props.navigation.state.params.term);
+    getDishResults = (dishName) => {
+      fetch(`192.168.1.97:8080/api/dish/${dishName}`)
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+          console.log(jsonResponse);
+          return jsonResponse;
+        })
+        .catch((error) => console.log(`my error: ${error}`));
     }
     render(){
         return(
-            <ResultsV text={this.props.navigation.state.params.term}
+            <ResultsV text={this.getDishResults(this.props.navigation.state.params.term)}
             />
         );
     }
