@@ -1,7 +1,11 @@
 const express = require('express'),
 router = express.Router();
+const algoliasearch = require('algoliasearch');
 const models = require('../models');
 const Op = require('sequelize').Op;
+
+const algoliaClient = algoliasearch('WUVCYK5SHG', process.env.ALGOLIA_API_KEY);
+const index = algoliaClient.initIndex('testPQ_Dishes');
 
 router.get('/', (req,res) => {
   console.log("Serving request: " + req.baseUrl);
@@ -10,8 +14,25 @@ router.get('/', (req,res) => {
   })
 });
 
-router.get('/:dishName', (req,res) => {
+router.get('/:dishName/full', (req,res) => {
   console.log(`Get with param: ${req.params.dishName}`);
+  index.search({
+    query: req.params.dishName
+  }, function searchDone(err, content) {
+    if (err) throw err;
+    
+    console.log(content.hits);
+    for (let i = 0; i < content.hits.length; i++) {
+      console.log(content.hits[i].name);
+    }
+    // add raw query to join dish, rating, and restaurant tables
+    
+  });
+  res.end();
+})
+
+router.get('/:dishName', (req,res) => {
+  // use algolia to get all matching dishes
   models.Dish.findAll({
     where: {
       name: {
