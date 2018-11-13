@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
+import { withNavigation } from 'react-navigation';
 import FooterV from './FooterV';
 import Home from '../Home/Home'
 import Profile from '../Profile/Profile';
@@ -32,4 +33,4 @@ class FooterC extends React.Component{
 
 }
 
-export default FooterC;
+export default withNavigation(FooterC);

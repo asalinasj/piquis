@@ -9,36 +9,28 @@ import {
     Content, Footer, FooterTab, Badge,
     Card, CardItem, Thumbnail    
 } from 'native-base';
+import Ratings from '../Ratings/Ratings';
 
 const DishCardV = (props) => {
     return(
         <Card>
             <CardItem>
                 <Left>
-                    <Thumbnail source={{uri: ''}}/>
+                    <Thumbnail source={{uri: 'http://aucdn.ar-cdn.com/recipes/xlarge/default.jpg'}}/>
                 <Body>
-                    <Text>Chilis</Text>
+                    <Text>Restaurant Name</Text>
                     <Text note>{props.text}</Text>
                 </Body>
                 </Left>
             </CardItem>
             <CardItem cardBody>
-                <Image source={{uri: ''}} 
+                <Image source={{uri: 'https://www.sanmanuel.com/sites/default/files/featured-images/15587_DIGI_Dining__17_Dining_1440x500.jpg'}} 
                     style={{height: 200, width: null, flex: 1}}/>
             </CardItem>
-            <CardItem>
-                <Left>
-                    <Button transparent>
-                        <Icon active name="thumbs-up" />
-                        <Text>12 likes</Text>
-                    </Button>
-                </Left>
+            <CardItem style={{height: 65}}>
                 <Body>
-                    <Text>Rate Me</Text>
+                    <Ratings />
                 </Body>
-                <Right>
-                    <Text>1 min ago</Text>
-                </Right>
             </CardItem>
         </Card>
     );

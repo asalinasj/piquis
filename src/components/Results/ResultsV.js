@@ -11,10 +11,11 @@ import {
 } from 'native-base';
 import FooterC from '../Footer/FooterC.js';
 import DishCard from '../DishCard/DishCard';
+import Ratings from '../Ratings/Ratings';
 
 const ResultsV = (props) => {
     return(
-        <Container>
+        <Container style={styles.MainContainer}>
             <Header>
 
             </Header>
@@ -59,3 +60,9 @@ const ResultsV = (props) => {
 }
 
 export default ResultsV;
+
+const styles = StyleSheet.create({
+    MainContainer: {
+        backgroundColor: '#F0FFF0',
+    }
+})
