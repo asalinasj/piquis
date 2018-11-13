@@ -25,11 +25,12 @@ import settings_icon from '../../../assets/settings_icon.png';
 import Home from '../Home/Home'
 import Profile from '../Profile/Profile';
 
+//const {navigate} = this.props.navigation;
 const FooterV = (props) => {
     return (
         <Footer>
           <FooterTab>
-            <Button vertical onPress={props.home}>
+            <Button active onPress={props.navHome}>
               <Icon 
                 name="home"
                />

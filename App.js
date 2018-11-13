@@ -8,6 +8,7 @@ import Profile from './src/components/Profile/Profile';
 import CreateAccount from './src/components/SignUp/CreateAccount';
 import Home from './src/components/Home/Home';
 import Results from './src/components/Results/Results';
+import FooterC from './src/components/Footer/FooterC';
 
 export default App = createStackNavigator({
   Login: { screen: Login},
