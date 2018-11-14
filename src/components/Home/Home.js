@@ -18,7 +18,7 @@ class Home extends React.Component{
     super(props)
     
     state = {
-      term: "",
+      term: "default",
     }
   }
   
@@ -29,16 +29,21 @@ class Home extends React.Component{
     this.props.navigation.navigate('Profile');
   }
   pressSearch = () => {
-    this.props.navigation.navigate('Results', {term: this.state.term});
-    console.log(this.state.term);
+    if(this.state.term != "default"){
+      this.props.navigation.navigate('Results', {term: this.state.term});
+      console.log(this.state.term);
+    }
+    else {
+      console.log("Null value");
+      this.props.navigation.navigate('Home');
+    }
+   
   }
   onPressHome = () => {
     this.props.navigation.navigate('Home');
   }
   sendData = (data) => {
     this.setState({term: data});
-
-
   }
 
     render(){

@@ -1,4 +1,4 @@
-import React, {Component}from 'react';
+import React, {Component} from 'react';
 import {
     Container,
     Header,
@@ -18,23 +18,24 @@ import {
     ImageBackground,
   } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import axios from 'axios';
 import profile_icon from '../../../assets/profile_icon.png';
 import home_icon from '../../../assets/home_icon.png';
 import settings_icon from '../../../assets/settings_icon.png';
 import Home from '../Home/Home'
 import Profile from '../Profile/Profile';
+import { withNavigation } from 'react-navigation';
 
+//const {navigate} = this.props.navigation;
 const FooterV = (props) => {
     return (
         <Footer>
           <FooterTab>
-            <Button vertical onPress={props.home}>
+            <Button vertical onPress={props.navHome}>
               <Icon 
                 name="home"
                />
             </Button>
-            <Button vertical onPress={props.navProfile}>
+            <Button active onPress={props.navProfile}>
               <Icon name="person" />
             </Button>
             <Button vertical>

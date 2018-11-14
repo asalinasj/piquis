@@ -17,17 +17,17 @@ import {
     Image,
   } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import axios from 'axios';
 import SearchHeader from '../SearchBar/SearchHeader.js';
 import piquis_text from '../../piquis_text.png';
 import Profile from './Profile';
+import FooterC from '../Footer/FooterC';
 
 const ProfileV = (props) => {
 
     return (
       <Container style={styles.MainContainer}>
         <Header style = {styles.header}>
-          <Right></Right>
+          <Left></Left>
           <Body>
             <Button
               style = {styles.button}
@@ -39,12 +39,13 @@ const ProfileV = (props) => {
               />
           </Button>
           </Body>
-          <Left></Left>
+          <Right></Right>
         </Header>
-          <Content style = {styles.content}>
-            <Text style = {styles.text}> PROFILE </Text>
-            <Text style = {styles.text1}> Marcial Cabrera </Text>
-          </Content>
+        <Content style = {styles.content}>
+          <Text style = {styles.text}> PROFILE </Text>
+          <Text style = {styles.text1}> Marcial Cabrera </Text>
+        </Content>
+        <FooterC />
       </Container>
     );
 }

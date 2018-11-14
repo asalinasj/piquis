@@ -25,7 +25,6 @@ class Profile extends React.Component{
             <ProfileV 
               home = {this.homePage}
               />
-            <FooterV />
           </View>
         );
     }
