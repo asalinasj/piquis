@@ -13,6 +13,13 @@ import FooterC from '../Footer/FooterC.js';
 import DishCard from '../DishCard/DishCard';
 import Ratings from '../Ratings/Ratings';
 
+const renderCard = () => {
+  return (result, index) => {
+      console.log(`${index}: ${result}`);
+      return <Text>Dish: {result}</Text>;
+  };
+};
+
 const ResultsV = (props) => {
     return(
         <Container style={styles.MainContainer}>
@@ -22,6 +29,7 @@ const ResultsV = (props) => {
             <Content>
                 <Text>Results page</Text>
                 <Text>Dish: {props.text}</Text>
+                {props.text.map(renderCard())}
                 <Card>
                     <CardItem>
                         <Left>
