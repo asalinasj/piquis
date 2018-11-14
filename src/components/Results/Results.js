@@ -16,7 +16,7 @@ class Results extends React.Component{
         super(props)
     }
     getDishResults = (dishName) => {
-      fetch(`192.168.1.97:8080/api/dish/${dishName}`)
+      fetch(`https://piquis-api-dot-piquis-220920.appspot.com/api/dish/`)
         .then((response) => response.json())
         .then((jsonResponse) => {
           console.log(jsonResponse);
