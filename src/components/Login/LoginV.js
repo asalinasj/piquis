@@ -43,6 +43,13 @@ const LoginV = (props) => {
                 <Text style={{color: 'white', fontSize: 25}}>
                   Login</Text>
               </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.btn2}
+                onPress={props.create}>
+                <Text style={{color: 'white', fontSize: 20}}>
+                  Create Account</Text>
+              </TouchableOpacity>
           </View>
       </KeyboardAvoidingView>
     );
@@ -51,6 +58,7 @@ const LoginV = (props) => {
 export default LoginV;
 
 const styles = StyleSheet.create({
+  
     MainContainer: {
       //flex: 1,
       justifyContent: 'center',
@@ -60,9 +68,11 @@ const styles = StyleSheet.create({
       height: '100%',
       backgroundColor: '#EFB289',
     },
+
     wrapper: {
       flex: 1,
     },
+
     container: {
       flex: 1,
       //alignItems: 'center',
@@ -77,6 +87,7 @@ const styles = StyleSheet.create({
       color: 'gray',
       fontWeight: 'bold',
     },
+
     piquisImage: {
         width: 170,
         height: 225,
@@ -84,6 +95,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: 55,
     },
+
     textInput: {
       alignSelf: 'center',
       padding: 16,
@@ -92,6 +104,7 @@ const styles = StyleSheet.create({
       width: '75%',
       borderRadius:10,
     },
+
     btn: {
       alignSelf: 'center',
       backgroundColor: '#1CA04B',
@@ -99,5 +112,15 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       width: '80%',
       borderRadius:10,
-    }
+      marginBottom: 30,
+    },
+
+    btn2: {
+      alignSelf: 'center',
+      backgroundColor: '#1CA04B',
+      padding: 20,
+      alignItems: 'center',
+      width: '50%',
+      borderRadius:10,
+    },
   });

@@ -17,40 +17,30 @@ import {
     Image,
   } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import SearchHeader from '../SearchBar/SearchHeader.js';
+import axios from 'axios';
+import SearchBar from '../SearchBar/SearchBar.js';
 import piquis_text from '../../piquis_text.png';
-import Profile from './Profile';
+import SearchHeader from '../SearchBar/SearchHeader';
 import FooterC from '../Footer/FooterC';
 
-const ProfileV = (props) => {
-
+const HomeV = (props) => {
     return (
       <Container style={styles.MainContainer}>
-        <Header style = {styles.header}>
-          <Left></Left>
-          <Body>
-            <Button
-              style = {styles.button}
-              onPress = {props.home}
-              >
-            <Image
-              style={styles.piquisImage}
-              source={require('../../piquis_text.png')}
-              />
-          </Button>
-          </Body>
-          <Right></Right>
-        </Header>
+        <SearchHeader 
+          searchButton = {props.search}
+          dataVal = {props.searchText}
+        />
         <Content style = {styles.content}>
-          <Text style = {styles.text}> PROFILE </Text>
-          <Text style = {styles.text1}> Marcial Cabrera </Text>
+            <Title style = {styles.text}> TRENDING </Title>
         </Content>
-        <FooterC />
+        <FooterC 
+          pressNavHome = {props.pressHome}
+         />
       </Container>
     );
 }
 
-export default ProfileV;
+export default HomeV;
 
 const styles = StyleSheet.create({
     MainContainer: {
@@ -64,7 +54,7 @@ const styles = StyleSheet.create({
     header: {
       flexDirection: 'column',
       justifyContent: 'space-between',
-      height: 130,
+      height: 180,
       width: '100%',
       alignItems: 'center',
       backgroundColor: 'transparent',
@@ -77,7 +67,7 @@ const styles = StyleSheet.create({
     },
 
     button: {
-      paddingTop: 8,
+      paddingBottom: 55,
       backgroundColor: 'transparent',
     },
 
@@ -86,15 +76,8 @@ const styles = StyleSheet.create({
     },
 
     text: {
-      alignSelf: 'center',
       color: '#324F17',
       fontSize: 40,
     },
 
-    text1: {
-      alignSelf: 'center',
-      marginTop: 20,
-      color: '#324F17',
-      fontSize: 40,
-    },
   });
