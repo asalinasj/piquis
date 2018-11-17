@@ -12,6 +12,7 @@ import {
 import FooterC from '../Footer/FooterC.js';
 import DishCard from '../DishCard/DishCard';
 import Ratings from '../Ratings/Ratings';
+import StarRatingC from '../Ratings/StarRatingC';
 
 const ResultsV = (props) => {
     return(
