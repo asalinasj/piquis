@@ -15,8 +15,38 @@ import Ratings from '../Ratings/Ratings';
 
 const renderCard = () => {
   return (result, index) => {
-      console.log(`${index}: ${result}`);
-      return <Text>Dish: {result}</Text>;
+      console.log(result);
+      return (
+        <Card key={index}>
+          <CardItem>
+            <Left>
+              <Thumbnail source={{uri: 'https://images-na.ssl-images-amazon.com/images/I/71uzndaHK7L._SY355_.png'}}/>
+              <Body>
+                <Text>Chilis</Text>
+                <Text note>{result.name}</Text>
+              </Body>
+            </Left>
+          </CardItem>
+          <CardItem cardBody>
+            <Image source={{uri: 'https://static.olocdn.net/menu/chilis/42ee64003b744623d43bbf514df8c013.jpg'}} 
+              style={{height: 200, width: null, flex: 1}}/>
+          </CardItem>
+          <CardItem>
+            <Left>
+              <Button transparent>
+                <Icon active name="thumbs-up" />
+                <Text>12 likes</Text>
+              </Button>
+            </Left>
+            <Body>
+              <Text>Rate Me</Text>
+            </Body>
+            <Right>
+              <Text>1 min ago</Text>
+            </Right>
+          </CardItem>
+        </Card>
+      );
   };
 };
 
@@ -28,37 +58,7 @@ const ResultsV = (props) => {
             </Header>
             <Content>
                 <Text>Results page</Text>
-                <Text>Dish: {props.text}</Text>
-                {props.text.map(renderCard())}
-                <Card>
-                    <CardItem>
-                        <Left>
-                            <Thumbnail source={{uri: 'https://images-na.ssl-images-amazon.com/images/I/71uzndaHK7L._SY355_.png'}}/>
-                            <Body>
-                                <Text>Chilis</Text>
-                                <Text note>{props.text}</Text>
-                            </Body>
-                        </Left>
-                    </CardItem>
-                    <CardItem cardBody>
-                        <Image source={{uri: 'https://static.olocdn.net/menu/chilis/42ee64003b744623d43bbf514df8c013.jpg'}} 
-                            style={{height: 200, width: null, flex: 1}}/>
-                    </CardItem>
-                    <CardItem>
-                        <Left>
-                            <Button transparent>
-                                <Icon active name="thumbs-up" />
-                                <Text>12 likes</Text>
-                            </Button>
-                        </Left>
-                        <Body>
-                            <Text>Rate Me</Text>
-                        </Body>
-                        <Right>
-                            <Text>1 min ago</Text>
-                        </Right>
-                    </CardItem>
-                </Card>
+                {props.results.map(renderCard())}
                 <DishCard />
                 <DishCard />
             </Content>
