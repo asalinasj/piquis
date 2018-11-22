@@ -4,7 +4,7 @@ const algoliasearch = require('algoliasearch');
 const models = require('../models');
 const Op = require('sequelize').Op;
 
-const dishSearchQuery = require('../queries/dishSearch');
+const dishSearchQuery = require('../sql/queries/dishSearch');
 
 const algoliaClient = algoliasearch('WUVCYK5SHG', process.env.ALGOLIA_API_KEY);
 const index = algoliaClient.initIndex('testPQ_Dishes');
