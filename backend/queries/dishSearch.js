@@ -1,16 +1,15 @@
 const query = `
   SELECT
-    d."name",
-    ra."Stars",
-    re."name",
-    re."rating"
+    d."id",
+    d."Name",
+    d."AverageRating",
+    re."Name",
+    re."Rating"
   FROM
     "Dish" d INNER JOIN
-    "Rating" ra ON  -- TODO: handle case where dish has no ratings
-    d."id" = ra."DishId" INNER JOIN
     "Restaurant" re ON d."RestaurantId" = re."id"
   WHERE
-    d."name" = ?  -- <-- replacement here
+    d."Name" = ?  -- <-- replacement here
   `;
 
 module.exports = query;
