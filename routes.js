@@ -1,5 +1,5 @@
-import React, {Component } from 'react';
-import { StyleSheet, Text, View, AppRegistry } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 import {createStackNavigator,
         createDrawerNavigator,
         createBottomTabNavigator} from 'react-navigation';
@@ -8,16 +8,18 @@ import Profile from './src/components/Profile/Profile';
 import CreateAccount from './src/components/SignUp/CreateAccount';
 import Home from './src/components/Home/Home';
 import Results from './src/components/Results/Results';
-import { MainNavigator } from './routes';
 
-export default class App extends Component{
-  render(){
-    return(
-      <MainNavigator />
-    );
-  }
-}
-//AppRegistry.registerComponent('piquis', () => App);
+export const MainNavigator = createStackNavigator({
+  Login: { screen: Login},
+  Home: {screen: Home},
+  Profile: { screen: Profile},
+  CreateAccount: { screen: CreateAccount},
+  Results: {screen: Results},
+  }, {
+    headerMode: 'none',
+    initialRouteName: 'Login',
+
+})
 
 
 /*const styles = StyleSheet.create({
