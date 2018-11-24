@@ -23,7 +23,7 @@ const renderCard = () => {
               <Thumbnail source={{uri: 'https://images-na.ssl-images-amazon.com/images/I/71uzndaHK7L._SY355_.png'}}/>
               <Body>
                 <Text>Chilis</Text>
-                <Text note>{result.name}</Text>
+                <Text note>{result.Name}</Text>
               </Body>
             </Left>
           </CardItem>
@@ -39,7 +39,7 @@ const renderCard = () => {
               </Button>
             </Left>
             <Body>
-              <Text>Rate Me</Text>
+              <Text>Rating: {result.AverageRating}</Text>
             </Body>
             <Right>
               <Text>1 min ago</Text>
