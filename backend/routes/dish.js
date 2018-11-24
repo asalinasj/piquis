@@ -39,7 +39,7 @@ router.get('/search/:dishName', (req,res) => {
 router.get('/:dishName', (req,res) => {
   models.Dish.findAll({
     where: {
-      name: {
+      Name: {
         $iLike: `%${req.params.dishName}%`,
       },
     },
