@@ -25,7 +25,6 @@ router.get('/search/:dishName', (req,res) => {
     
     let dishNameMatches = [];
     for (let i = 0; i < content.hits.length; i++) {
-      console.log(content.hits[i].name);
       dishNameMatches.push(content.hits[i].name);
     }
     
