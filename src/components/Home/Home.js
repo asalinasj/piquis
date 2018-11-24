@@ -11,7 +11,9 @@ import {
 import FooterV from '../Footer/FooterV.js';
 import Profile from '../Profile/Profile';
 import Results from '../Results/Results';
-
+import {connect} from 'react-redux';
+import { signout } from '../../utils/db';
+import { notifySignOut } from '../../actions';
 
 class Home extends React.Component{
   constructor(props){
@@ -19,9 +21,16 @@ class Home extends React.Component{
     
     state = {
       term: "default",
+      ready: true
     }
   }
-  
+
+  logout = () => {
+    signout(() => {
+      this.props.notifySignOut()
+    })
+  }
+
   static navigationOptions = {
     title: 'Welcome',
   };
@@ -47,6 +56,8 @@ class Home extends React.Component{
   }
 
     render(){
+        const {user} = this.props;
+        console.log("user: ", user);
         return(
           <View>
             <HomeV
@@ -61,4 +72,17 @@ class Home extends React.Component{
         );
     }
 }
-export default Home;
+//export default Home;
+
+mapStateToProps = (state) => {
+  const {user} = state;
+  return {user}
+}
+
+mapDispatchToProps = (dispatch) => {
+  return{
+    notifySignOut: () => dispatch(notifySignOut())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

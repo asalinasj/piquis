@@ -1,15 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, Platform } from 'react-native';
+import { StyleSheet, Text, Image, View, Platform, TouchableOpacity } from 'react-native';
 import {createStackNavigator,
         createDrawerNavigator,
-        createBottomTabNavigator} from 'react-navigation';
+        createBottomTabNavigator, 
+        createMaterialTopTabNavigator} from 'react-navigation';
 import Login from './src/components/Login/Login';
 import Profile from './src/components/Profile/Profile';
 import CreateAccount from './src/components/SignUp/CreateAccount';
 import Home from './src/components/Home/Home';
 import Results from './src/components/Results/Results';
+import DrawerScreen from './src/navigation/drawer/DrawerScreen';
 
-export const MainNavigator = createStackNavigator({
+const MainNavigator = createStackNavigator({
   Login: { screen: Login},
   Home: {screen: Home},
   Profile: { screen: Profile},
@@ -20,6 +22,36 @@ export const MainNavigator = createStackNavigator({
     initialRouteName: 'Login',
 
 })
+
+export const Drawer = createDrawerNavigator({
+  Login: {
+    screen: Login,
+    navigationOptions: () => ({
+      title: 'Sign Out'
+    }),
+  },
+  Home: {
+    screen: Home,
+    navigationOptions: () => ({
+      title: 'Home'
+    }), 
+  },
+  Profile: {
+    screen: Profile,
+    navigationOptions: () => ({
+      title: ''
+    }),
+  },
+  Results: {
+    screen: Results,
+    navigationOptions: () => ({
+      title: ''
+    }),
+  },
+}, {
+    drawerPosition: 'right',
+   }
+);
 
 
 /*const styles = StyleSheet.create({

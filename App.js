@@ -1,19 +1,38 @@
 import React, {Component } from 'react';
 import { StyleSheet, Text, View, AppRegistry } from 'react-native';
+import {createStore, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
+import * as reducers from './src/reducers';
+import {firebaseApp} from './src/utils/db';
 import {createStackNavigator,
         createDrawerNavigator,
         createBottomTabNavigator} from 'react-navigation';
-import Login from './src/components/Login/Login';
-import Profile from './src/components/Profile/Profile';
-import CreateAccount from './src/components/SignUp/CreateAccount';
-import Home from './src/components/Home/Home';
-import Results from './src/components/Results/Results';
-import { MainNavigator } from './routes';
+//import { MainNavigator } from './routes';
+import {Drawer} from './routes';
+
+const store = createStore(combineReducers({
+  ...reducers
+}))
 
 export default class App extends Component{
+  state = {
+    sessionChecked: false,
+    user: null
+  }
+
+  componentDidMount() {
+    firebaseApp.auth().onAuthStateChanged((user) => {
+      this.setState({sessionChecked: true, user})
+    })
+  }
+
   render(){
     return(
-      <MainNavigator />
+      <Provider store={store}>
+        
+          <Drawer /> 
+        
+      </Provider>
     );
   }
 }
