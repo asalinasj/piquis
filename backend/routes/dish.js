@@ -4,6 +4,8 @@ const algoliasearch = require('algoliasearch');
 const models = require('../models');
 const Op = require('sequelize').Op;
 
+const dishSearchQuery = require('../sql/queries/dishSearch');
+
 const algoliaClient = algoliasearch('WUVCYK5SHG', process.env.ALGOLIA_API_KEY);
 const index = algoliaClient.initIndex('testPQ_Dishes');
 
@@ -14,28 +16,30 @@ router.get('/', (req,res) => {
   })
 });
 
-router.get('/:dishName/full', (req,res) => {
+router.get('/search/:dishName', (req,res) => {
   console.log(`Get with param: ${req.params.dishName}`);
   index.search({
     query: req.params.dishName
   }, function searchDone(err, content) {
     if (err) throw err;
     
-    console.log(content.hits);
+    let dishNameMatches = [];
     for (let i = 0; i < content.hits.length; i++) {
       console.log(content.hits[i].name);
+      dishNameMatches.push(content.hits[i].name);
     }
-    // add raw query to join dish, rating, and restaurant tables
     
+    if (dishNameMatches.length === 0) return res.json([]);
+    models.sequelize.query(dishSearchQuery,
+      { replacements: dishNameMatches, type: models.sequelize.QueryTypes.SELECT })
+      .then(results => res.json(results));
   });
-  res.end();
 })
 
 router.get('/:dishName', (req,res) => {
-  // use algolia to get all matching dishes
   models.Dish.findAll({
     where: {
-      name: {
+      Name: {
         $iLike: `%${req.params.dishName}%`,
       },
     },
