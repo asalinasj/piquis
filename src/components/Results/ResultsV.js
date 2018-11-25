@@ -7,18 +7,20 @@ import {
     Body,
     Right, Button, Icon, Title,
     Content, Footer, FooterTab, Badge,
-    Card, CardItem, Thumbnail    
+    Card, CardItem, Thumbnail
 } from 'native-base';
 import FooterC from '../Footer/FooterC.js';
 import DishCard from '../DishCard/DishCard';
 import Ratings from '../Ratings/Ratings';
+import SearchHeader from '../SearchBar/SearchHeader';
 
 const ResultsV = (props) => {
     return(
         <Container style={styles.MainContainer}>
-            <Header>
-
-            </Header>
+            <SearchHeader
+              searchButton = {props.search}
+              dataVal = {props.searchText}
+            />
             <Content>
                 <Text>Results page</Text>
                 <Text>Dish: {props.text}</Text>
@@ -33,7 +35,7 @@ const ResultsV = (props) => {
                         </Left>
                     </CardItem>
                     <CardItem cardBody>
-                        <Image source={{uri: 'https://static.olocdn.net/menu/chilis/42ee64003b744623d43bbf514df8c013.jpg'}} 
+                        <Image source={{uri: 'https://static.olocdn.net/menu/chilis/42ee64003b744623d43bbf514df8c013.jpg'}}
                             style={{height: 200, width: null, flex: 1}}/>
                     </CardItem>
                     <CardItem>
