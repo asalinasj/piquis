@@ -1,6 +1,7 @@
 module.exports = (sequelize,DataTypes) => {
   const Dish = sequelize.define('Dish', {
-    name: DataTypes.STRING,
+    Name: DataTypes.STRING,
+    AverageRating: DataTypes.DOUBLE(1,2),
   },
   {
     tableName: 'Dish',
