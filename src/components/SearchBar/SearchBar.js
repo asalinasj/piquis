@@ -36,10 +36,7 @@ export default class SearchBar  extends Component {
       <View style={containerStyle}>
         <TextInput
           style={searchTextStyle} placeholder="Search"
-          onChangeText = {value =>
-            {if(value === null){
-              console.log('error');
-            }else{{this.props.searchDataVal(value)}}}} // { term }  == { term: term }
+          onChangeText = {value => {this.props.searchDataVal(value)}} // { term }  == { term: term }
         />
         <Button
           style={buttonStyle}

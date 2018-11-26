@@ -10,6 +10,7 @@ import {
     Card, CardItem, Thumbnail    
 } from 'native-base';
 import Ratings from '../Ratings/Ratings';
+import StarRatingC from '../Ratings/StarRatingC';
 
 const DishCardV = (props) => {
     return(
@@ -29,7 +30,7 @@ const DishCardV = (props) => {
             </CardItem>
             <CardItem style={{height: 65}}>
                 <Body>
-                    <Ratings />
+                    <StarRatingC />
                 </Body>
             </CardItem>
         </Card>
