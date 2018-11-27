@@ -9,7 +9,6 @@ class FooterC extends React.Component{
     constructor(props){
         super(props)
         state = {
-
         }
     }
 
@@ -20,9 +19,10 @@ class FooterC extends React.Component{
     navigateHome = () => {
         this.props.navigation.navigate('Home');
     }
+
     render(){
         return(
-            <FooterV 
+            <FooterV
                 home={this.props.pressNavHome}
                 navHome = {this.navigateHome}
                 navProfile = {this.profilePage}
