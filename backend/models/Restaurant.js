@@ -1,12 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
   const Restaurant = sequelize.define('Restaurant', {
-    name: {
+    Name: {
       type: DataTypes.STRING,
       validate: {
         notEmpty: true,
       },
     },
-    location: {
+    Location: {
       type: DataTypes.STRING,
       validate: {
         notEmpty: false,
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         }*/
       },
     },
-    rating: {
+    Rating: {
       type: DataTypes.INTEGER,
       validate: {
         notEmpty: false,
