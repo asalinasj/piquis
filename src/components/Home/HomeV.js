@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     Container,
+    Header,
     Left,
     Body,
     Right, Button, Icon, Title,
@@ -25,14 +26,14 @@ import FooterC from '../Footer/FooterC';
 const HomeV = (props) => {
     return (
       <Container style={styles.MainContainer}>
-        <SearchHeader
+        <SearchHeader 
           searchButton = {props.search}
           dataVal = {props.searchText}
         />
         <Content style = {styles.content}>
             <Title style = {styles.text}> TRENDING </Title>
         </Content>
-        <FooterC
+        <FooterC 
           pressNavHome = {props.pressHome}
          />
       </Container>
@@ -50,13 +51,28 @@ const styles = StyleSheet.create({
       backgroundColor: '#F0FFF0',
     },
 
+    header: {
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      height: 180,
+      width: '100%',
+      alignItems: 'center',
+      backgroundColor: 'transparent',
+      borderBottomWidth: 0,
+    },
+
     piquisImage: {
         width: 59.5,
         height: 78.75,
     },
 
+    button: {
+      paddingBottom: 55,
+      backgroundColor: 'transparent',
+    },
+
     content: {
-      paddingTop: 10,
+      paddingTop: 20,
     },
 
     text: {

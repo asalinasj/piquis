@@ -3,7 +3,7 @@ import {
     Header,
     Left,
     Body,
-    Right, Button, Title} from 'native-base';
+    Right, Button, Title,} from 'native-base';
 import {
     StyleSheet,
     View,
@@ -23,13 +23,16 @@ const SearchHeader = (props) => {
           <Header style = {styles.header}>
             <Left></Left>
             <Body>
-              <Title style={styles.text}> PIQUIS </Title>
-              <View>
+              <Button
+                style = {styles.button}
+                onPress = {props.home}
+                >
+
+              </Button>
               <SearchBar
                 pressSearch={props.searchButton}
                 searchDataVal={props.dataVal}
               />
-              </View>
             </Body>
             <Right></Right>
           </Header>
@@ -41,25 +44,18 @@ export default SearchHeader;
 const styles = StyleSheet.create({
 
     header: {
-      height: 135,
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      height: 180,
       width: '100%',
       alignItems: 'center',
       backgroundColor: 'transparent',
-      borderBottomWidth: 1.5,
-      borderBottomColor: "#D16928"
+      borderBottomWidth: 0,
     },
 
     piquisImage: {
         width: 59.5,
         height: 78.75,
-    },
-
-    text: {
-      paddingTop: 10,
-      paddingBottom: 10,
-      fontSize: 32,
-      fontWeight: 'bold',
-      color: '#D16928',
     },
 
     button: {

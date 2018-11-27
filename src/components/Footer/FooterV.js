@@ -31,7 +31,7 @@ const FooterV = (props) => {
         <Footer>
           <FooterTab>
             <Button vertical onPress={props.navHome}>
-              <Icon
+              <Icon 
                 name="home"
                />
             </Button>

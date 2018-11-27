@@ -22,7 +22,7 @@ class Results extends React.Component{
     componentDidMount = () => {
       this.getDishResults(this.props.navigation.state.params.term);
     }
-    
+
     render(){
         return (
             <ResultsV results={this.state.results} />

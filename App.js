@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {createStackNavigator,
         createDrawerNavigator,
@@ -8,16 +8,19 @@ import Profile from './src/components/Profile/Profile';
 import CreateAccount from './src/components/SignUp/CreateAccount';
 import Home from './src/components/Home/Home';
 import Results from './src/components/Results/Results';
-import {Drawer} from './src/routes';
 
-export default class App extends Component {
-  render(){
-    //separated Navigation into another component routes.js
-    return(
-      <Drawer />
-    );
-  }
-}
+export default App = createStackNavigator({
+  Login: { screen: Login},
+  Home: {screen: Home},
+  Profile: { screen: Profile},
+  CreateAccount: { screen: CreateAccount},
+  Results: {screen: Results},
+  }, {
+    headerMode: 'none',
+    initialRouteName: 'Login',
+
+})
+
 
 /*const styles = StyleSheet.create({
   container: {
