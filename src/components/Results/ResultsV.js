@@ -22,15 +22,15 @@ const renderCard = () => {
         <Card key={index}>
           <CardItem>
             <Left>
-              <Thumbnail source={{uri: 'https://images-na.ssl-images-amazon.com/images/I/71uzndaHK7L._SY355_.png'}}/>
+              <Thumbnail source={{uri: 'http://aucdn.ar-cdn.com/recipes/xlarge/default.jpg'}}/>
               <Body>
-                <Text>Chilis</Text>
+                <Text>{result.RestaurantId}</Text>
                 <Text note>{result.Name}</Text>
               </Body>
             </Left>
           </CardItem>
           <CardItem cardBody>
-            <Image source={{uri: 'https://static.olocdn.net/menu/chilis/42ee64003b744623d43bbf514df8c013.jpg'}} 
+            <Image source={{uri: 'https://www.sanmanuel.com/sites/default/files/featured-images/15587_DIGI_Dining__17_Dining_1440x500.jpg'}} 
               style={{height: 200, width: null, flex: 1}}/>
           </CardItem>
           <CardItem>
@@ -60,8 +60,8 @@ const ResultsV = (props) => {
             <Content>
                 <Text>Results page</Text>
                 {props.results.map(renderCard())}
-                <DishCard />
-                <DishCard />
+                {/* <DishCard />
+                <DishCard /> */}
             </Content>
             <FooterC />
         </Container>
