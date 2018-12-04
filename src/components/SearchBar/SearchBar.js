@@ -36,7 +36,7 @@ export default class SearchBar  extends Component {
       <View style={containerStyle}>
         <TextInput
           style={searchTextStyle} placeholder="Search"
-          onChangeText = {value => this.props.searchDataVal(value)}// { term }  == { term: term }
+          onChangeText = {value => this.props.searchDataVal(value)} // { term }  == { term: term }
         />
         <Button
           style={buttonStyle}
@@ -58,18 +58,19 @@ const styles = StyleSheet.create({
     containerStyle: {
       flexDirection: 'row',
       width: '100%',
+      alignItems: 'flex-start',
     },
 
     searchTextStyle: {
-      alignItems: 'center',
+      //alignItems: 'center',
       textAlign: 'center',
       fontWeight: '500',
       backgroundColor: '#ede9e4',
       borderColor: '#324F17',
       borderWidth: 1.5,
-      width: 310,
+      width: 300,
       height: 40,
-      borderRadius:10,
+      borderRadius:11,
 
     },
 

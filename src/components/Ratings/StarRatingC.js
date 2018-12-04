@@ -5,7 +5,7 @@ class StarRatingC extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            starCount: 3.5
+            starCount: this.props.rate
         };
     }
     //trying to update state when pressing new rating
