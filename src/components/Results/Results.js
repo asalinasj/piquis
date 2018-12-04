@@ -3,15 +3,10 @@ import ResultsV from './ResultsV';
 
 class Results extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
-            term: '',
-            results: [],
-        }
-    }
-    sendData = (data) => {
-        this.setState({term: data});
-        //this.props.navigation.state.params.term = data;
+          results: [],
+        };
     }
 
     getDishResults = (dishName) => {
@@ -46,7 +41,8 @@ class Results extends React.Component{
                 searchText={this.sendData}
                 results={this.state.results}
             />
-        );
+
+        )
     }
 }
 

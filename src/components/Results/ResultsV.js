@@ -7,12 +7,11 @@ import {
     Body,
     Right, Button, Icon, Title,
     Content, Footer, FooterTab, Badge,
-    Card, CardItem, Thumbnail
+    Card, CardItem, Thumbnail    
 } from 'native-base';
 import FooterC from '../Footer/FooterC.js';
 import DishCard from '../DishCard/DishCard';
 import Ratings from '../Ratings/Ratings';
-import SearchHeader from '../SearchBar/SearchHeader';
 
 const renderCard = () => {
   return (result, index) => {
@@ -54,10 +53,9 @@ const renderCard = () => {
 const ResultsV = (props) => {
     return(
         <Container style={styles.MainContainer}>
-            <SearchHeader
-              searchButton = {props.search}
-              dataVal = {props.searchText}
-            />
+            <Header>
+
+            </Header>
             <Content>
                 <Text>Results page</Text>
                 {props.results.map(renderCard())}
