@@ -4,17 +4,14 @@ import ResultsV from './ResultsV';
 class Results extends React.Component{
     constructor(props){
         super(props)
-        state = {
-            term: ''
+        this.state = {
+            term: '',
+            results: [],
         }
     }
     sendData = (data) => {
         this.setState({term: data});
         //this.props.navigation.state.params.term = data;
-        super(props);
-        this.state = {
-          results: [],
-        };
     }
 
     getDishResults = (dishName) => {
