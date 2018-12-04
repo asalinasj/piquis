@@ -5,7 +5,8 @@ class Results extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-          results: [],
+            term: '',
+            results: [],
         };
     }
 
@@ -32,6 +33,9 @@ class Results extends React.Component{
           this.props.navigation.navigate('Home');
         }
        
+    }
+    sendData = (data) => {
+        this.setState({term: data});
     }
     render(){
         return(

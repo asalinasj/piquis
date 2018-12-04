@@ -12,6 +12,8 @@ import {
 import FooterC from '../Footer/FooterC.js';
 import DishCard from '../DishCard/DishCard';
 import Ratings from '../Ratings/Ratings';
+import SearchHeader from '../SearchBar/SearchHeader';
+import StarRatingC from '../Ratings/StarRatingC';
 
 const renderCard = () => {
   return (result, index) => {
@@ -33,16 +35,14 @@ const renderCard = () => {
           </CardItem>
           <CardItem>
             <Left>
-              <Button transparent>
+              {/* <Button transparent>
                 <Icon active name="thumbs-up" />
                 <Text>12 likes</Text>
-              </Button>
+              </Button> */}
+              <StarRatingC rate={result.AverageRating}/>
             </Left>
-            <Body>
-              <Text>Rating: {result.AverageRating}</Text>
-            </Body>
             <Right>
-              <Text>1 min ago</Text>
+              <Text>Rating: {result.AverageRating}</Text>
             </Right>
           </CardItem>
         </Card>
@@ -53,9 +53,10 @@ const renderCard = () => {
 const ResultsV = (props) => {
     return(
         <Container style={styles.MainContainer}>
-            <Header>
-
-            </Header>
+            <SearchHeader 
+              searchButton = {props.search}
+              dataVal = {props.searchText}
+            />
             <Content>
                 <Text>Results page</Text>
                 {props.results.map(renderCard())}
