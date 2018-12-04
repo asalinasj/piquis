@@ -24,7 +24,7 @@ const renderCard = () => {
             <Left>
               <Thumbnail source={{uri: 'http://aucdn.ar-cdn.com/recipes/xlarge/default.jpg'}}/>
               <Body>
-                <Text>{result.RestaurantId}</Text>
+                <Text>Restaurant {result.RestaurantId}</Text>
                 <Text note>{result.Name}</Text>
               </Body>
             </Left>
